@@ -80,7 +80,6 @@ defaultSkills = ['lwc', 'javascript'];
 | `field-level-help`      | String  | Help text shown next to the label                                           | No       | -                 |
 | `autocomplete`          | String  | Native input autocomplete behavior (`on` / `off`)                           | No       | off               |
 | `dropdown-alignment`    | String  | Defines the alignment of the dropdown (`left` / `right` / `center`)        | No       | left              |
-| `input-icon`            | String  | Custom icon shown inside the input field (`utility:search`, etc.)           | No       | -                 |
 | `pills`                 | Boolean | Whether to display pills below the input for selected options               | No       | false             |
 | `value`                 | String(Single Select) Array(Multi Select)  | Default or pre-populated selected value(s)                                  | No       | -                 |
 | `allow-search`          | Boolean | Enables or disables the search functionality                                | No       | true              |

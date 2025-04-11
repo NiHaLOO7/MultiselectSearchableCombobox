@@ -72,7 +72,6 @@ defaultSkills = ['lwc', 'javascript'];
 | `name`                  | String  | Name of the input field (used in forms)                                     | No       | -                 |
 | `label`                 | String  | Label displayed above the combobox                                          | No      | -                 |
 | `options`               | Array   | Array of option objects: `{ label: String, value: String }`                | Yes      | -                 |
-| `selected-options`      | Array   | Array of pre-selected value strings                                         | No       | []                |
 | `required`              | Boolean | Whether the field is required                                               | No       | false             |
 | `readonly`              | Boolean | Makes the input read-only                                                   | No       | false             |
 | `disabled`              | Boolean | Disables the entire combobox                                                | No       | false             |
@@ -84,7 +83,7 @@ defaultSkills = ['lwc', 'javascript'];
 | `input-icon`            | String  | Custom icon shown inside the input field (`utility:search`, etc.)           | No       | -                 |
 | `pills`                 | Boolean | Whether to display pills below the input for selected options               | No       | false             |
 | `input-value`           | String  | Current input value (useful for default text or custom search logic)       | No       | -                 |
-| `value`                 | String  | Default or pre-populated selected value(s)                                  | No       | -                 |
+| `value`                 | String(Single Select) Array(Multiselect)  | Default or pre-populated selected value(s)                                  | No       | -                 |
 | `allow-search`          | Boolean | Enables or disables the search functionality                                | No       | true              |
 | `sort`                  | Boolean | Whether to sort the options in alphabetical order                           | No       | false             |
 | `multiselect`           | Boolean | Allows multiple selections if set to true                                   | No       | false             |

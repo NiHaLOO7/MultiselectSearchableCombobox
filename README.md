@@ -82,15 +82,16 @@ defaultSkills = ['lwc', 'javascript'];
 | `dropdown-alignment`    | String  | Defines the alignment of the dropdown (`left` / `right` / `center`)        | No       | left              |
 | `input-icon`            | String  | Custom icon shown inside the input field (`utility:search`, etc.)           | No       | -                 |
 | `pills`                 | Boolean | Whether to display pills below the input for selected options               | No       | false             |
-| `input-value`           | String  | Current input value (useful for default text or custom search logic)       | No       | -                 |
-| `value`                 | String(Single Select) Array(Multiselect)  | Default or pre-populated selected value(s)                                  | No       | -                 |
+| `value`                 | String(Single Select) Array(Multi Select)  | Default or pre-populated selected value(s)                                  | No       | -                 |
 | `allow-search`          | Boolean | Enables or disables the search functionality                                | No       | true              |
 | `sort`                  | Boolean | Whether to sort the options in alphabetical order                           | No       | false             |
 | `multiselect`           | Boolean | Allows multiple selections if set to true                                   | No       | false             |
 | `disabled`              | Boolean | If true, the combobox will be disabled                                      | No       | false             |
 | `variant`               | String  | The variant changes the appearance of the combobox (`standard`, `label-hidden`, `label-inline`) | No | standard |
 | `dropdown-height`       | String  | Height of the dropdown list (e.g., '200px')                                 | No       | auto              |
-| `aria-labelledby`       | String  | ARIA label for accessibility                                               | No       | -                 |
+| `aria-labelledby`       | String  | ID of the element that labels the combobox, enhancing accessibility for screen readers | No       | -                 |
+| `aria-label`       | String  | Defines a string label directly on the combobox for accessibility purposes | No       | -                 |
+| `aria-describedby`       | String  | ID of the element that provides descriptive information about the combobox | No       | -                 |
 
 ---
 

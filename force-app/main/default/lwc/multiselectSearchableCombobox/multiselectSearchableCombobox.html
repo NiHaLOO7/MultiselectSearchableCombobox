@@ -1,0 +1,150 @@
+<template>
+    <div class={computedFormElementClasses}>
+        <label
+            class={computedLabelClass}
+            id="combobox-label"
+        >
+            <abbr
+                if:true={required}
+                class="slds-required"
+                title="required"
+            >* </abbr>
+            {label}
+        </label>
+        <lightning-helptext
+            if:true={_fieldLevelHelp}
+            content={_fieldLevelHelp}
+        ></lightning-helptext>
+        <div class="slds-form-element__control">
+            <div class="slds-combobox_container">
+                <div 
+                    class={computedDropdownTriggerClass}
+                    role="combobox"
+                    onclick={handleTriggerClick}
+                    aria-haspopup="listbox">
+                    <div
+                        class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right"
+                        role="none"
+                    >
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right ">
+                                <lightning-icon
+                                    size="x-small"
+                                    class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default"
+                                    icon-name={_inputIcon}
+                                ></lightning-icon>
+                                <input
+                                    required={required}
+                                    type="text"
+                                    role="textbox"
+                                    id="input"
+                                    name={name}
+                                    autocomplete={aurocomplete}
+                                    class={computedInputClasses}
+                                    value={inputValue}
+                                    onkeyup={handleChange}
+                                    onfocus={handleFocus}
+                                    onblur={handleBlur}
+                                    readonly={readonly}
+                                    disabled={disabled}
+                                    onkeydown={handleKeyDown}
+                                    oninput={handleInput}
+                                    placeholder={placeholder}
+                                    aria-invalid={isInvalid}
+                                    aria-describedby="form-error-01"
+                                />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div
+                        if:true={tempOptions.length}
+                        id="listbox"
+                        class={computedDropdownClass}
+                        role="listbox"
+                        onmousedown={handleDropdownMouseDown}
+                        onmouseup={handleDropdownMouseUp}
+                        onmouseenter={handleDropdownMouseEnter}
+                        onmouseleave={handleDropdownMouseLeave}
+                    >
+                        <ul
+                            class="slds-listbox slds-listbox_vertical"
+                            role="presentation"
+                        >
+                            <li
+                                for:each={tempOptions}
+                                for:item="option"
+                                for:index="index"
+                                key={option.value}
+                                role="presentation"
+                                class="slds-listbox__item"
+                                onclick={handleSelect}
+                            >
+                                <div
+                                    
+                                    onmouseenter={handleMouseEnter}
+                                    onmouseleave={handleMouseLeave}
+                                    data-value={option.value}
+                                    data-label={option.label}
+                                    data-function="options"
+                                    data-index={index}
+                                    class="options slds-media slds-listbox__option slds-listbox__option_plain slds-media_small"
+                                    role="option"
+                                >
+                                    <span class="slds-media__figure slds-align_absolute-center slds-listbox__option-icon">
+                                        <!-- <template if:true={option.isSelected}> -->
+                                            <lightning-icon 
+                                                icon-name="utility:check" 
+                                                class="slds-icon-utility-check slds-listbox__icon-selected slds-icon_container" 
+                                                size="x-small" 
+                                                alternative-text="Selected">
+                                            </lightning-icon>
+                                        <!-- </template> -->
+                                    </span>
+                                    <span class="slds-media__body">
+                                        <span class="slds-truncate" title={option.label}>
+                                            {option.label}
+                                        </span>
+                                        <template if:true={showValues}>
+                                        <br />
+                                            <span class="slds-text-color_weak slds-text-body_small">
+                                                {option.value}
+                                            </span>
+                                        </template>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="slds-form-element__help"
+            if:true={_helpMessage}
+            data-help-text
+            id="form-error"
+        >{_helpMessage}</div>
+    </div>
+    <!--Pills -->
+    <div class="slds-box slds-scrollable_y" style="max-height: 200px;" if:true={pills}>
+        <template for:each={selectedOptions} for:item="option">
+          <lightning-pill
+            key={option.value}
+            class="slds-m-around_xx-small"
+            name={option.value}
+            tabindex="0"
+            label={option.label}
+            onremove={removePill}
+          >
+            <!-- Icon in the pill -->
+            <template if:true={pillsIcon}>
+              <lightning-icon
+                icon-name={pillsIcon}
+                alternative-text="icon"
+              ></lightning-icon>
+            </template>
+          </lightning-pill>
+        </template>
+    </div>
+</template>
